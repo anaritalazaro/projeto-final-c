@@ -1,5 +1,17 @@
 # Registo de Sessões
 
+## Sessão 2 - 24/08/2026
+
+**Funcionalidades implementadas hoje:**
+- README.md redigido em trabalho autónomo antes da sessão
+
+**Maior dificuldade encontrada e como resolvi:**
+
+**Próximo passo planeado:**
+
+**Linhas de código escritas hoje (estimativa):**
+
+
 ## Sessão 1 – 21/08/2026
 
 **Funcionalidades implementadas hoje:**
