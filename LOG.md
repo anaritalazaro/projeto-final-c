@@ -4,13 +4,19 @@
 
 **Funcionalidades implementadas hoje:**
 - README.md redigido em trabalho autónomo antes da sessão
+- Implementada a função drop_piece, que aplica a gravidade: percorre a coluna de baixo para cima, coloca a peça na primeira posição livre e devolve a linha (ou -1 se a coluna estiver cheia)
+
 
 **Maior dificuldade encontrada e como resolvi:**
+- Dificuldade em integrar a função no ciclo do main — a estrutura do do...while: perceber onde termina o ciclo e em aproveitar o valor devolvido pela função em vez de voltar a consultar o tabuleiro
+- Terminada a sessão com a reversão do main.c para a versão da sessão anterior, para partir de uma base limpa
+- Parte da sessão de hoje teve na 1ª hora um teste e depois tive que rever o que já tinha feito anteriormente antes de começar a programar
 
 **Próximo passo planeado:**
+- Integrar o get_move e o drop_piece no ciclo do jogo, tratar o caso da coluna cheia e alternar entre jogadores.
 
 **Linhas de código escritas hoje (estimativa):**
-
+15
 
 ## Sessão 1 – 21/08/2026
 

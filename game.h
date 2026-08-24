@@ -9,4 +9,6 @@ void print_board(char board[6][7]);
 int get_move(int *col);
 void show_menu(void);
 
+int drop_piece(char board[6][7], int col, char jogador);
+
 #endif //última linha do ficheiro

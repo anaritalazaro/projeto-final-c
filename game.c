@@ -58,3 +58,16 @@ void show_menu(void) // mostrar opções
     printf("2. Sair\n");
     printf("Opcao: ");
 }
+
+int drop_piece(char board[6][7], int col, char jogador)
+{
+    for (int i = 5; i >= 0; i--)
+    {
+        if (board[i][col] == '.')
+        {
+            board[i][col] = jogador;
+            return i;
+        }
+    }
+    return -1;
+}
