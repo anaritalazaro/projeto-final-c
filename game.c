@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "game.h"
 
+#define VERMELHO "\033[31m"
+#define AMARELO "\033[33m"
+#define RESET "\033[0m"
+
 void mostrar_boas_vindas(void)
 {
     printf("Projeto final - UFCD 0809\n");
@@ -24,7 +28,20 @@ void print_board(char board[6][7]) // mostrar tabuleiro
     {
         for (int j = 0; j < 7; j++)
         {
-            printf(" %c ", board[i][j]);
+            
+            if (board[i][j] == 'X')
+            {
+                printf(" " VERMELHO "X" RESET " ");
+            }
+            else if (board[i][j] == 'O')
+            {
+                printf(" " AMARELO "O" RESET " ");
+            }
+            else
+            {
+                printf(" %c ", board[i][j]);
+            }
+
             if (j < 6)
                 printf("|");
         }

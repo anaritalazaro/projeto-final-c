@@ -7,18 +7,23 @@
 - Tratamento da jogada inválida com continue
 - Alternância entre jogadores
 - Função verificar_vitoria com a deteção horizontal a funcionar
+- Pós-sessão: 
+   - Atualização para as quatro direções de vitória
+   - Detetar empate
+   - Reinício com menu
+   - Cores ANSI
 
 **Maior dificuldade encontrada e como resolvi:**
 - Risco de acesso a memória fora da matriz no drop_piece, identificado pelo formador na revisão do código: uma coluna fora do intervalo 0-6 seria lida na mesma, podendo causar um erro grave. Resolvido com uma validação no início da função, que devolve -1 nesses casos.
 - Distinguir uma função que verifica de uma que mostra — a tendência inicial foi reaproveitar o print_board e encher a função de printf. Resolvido percebendo que cada função tem uma responsabilidade única: o print_board mostra, o verificar_vitoria só devolve um resultado.
-- Perceber os limites dos ciclos (porquê j < 4 na horizontal). Resolvido ao eneteder que a partir da coluna 4 já não cabem quatro peças à direita, daí j < 4.
+- Perceber os limites dos ciclos (porquê j < 4 na horizontal). Resolvido ao entender que a partir da coluna 4 já não cabem quatro peças à direita, daí j < 4. Além disto cada direção tem limites diferentes conforme o índice cresce ou decresce, e a diagonal ascendente foi a menos intuitiva por o i ter de começar em 3.
 
 
 **Próximo passo planeado:**
-- Vitória vertical e nas duas diagonais, deteção de empate, e reinício do jogo.
+- Validação de entrada não numérica no get_move (letras são aceites e repetem a coluna anterior), e eventual interface com ncurses.
 
 **Linhas de código escritas hoje (estimativa):**
-40
+100
 
 ## Sessão 2 - 24/08/2026
 
