@@ -61,6 +61,10 @@ void show_menu(void) // mostrar opções
 
 int drop_piece(char board[6][7], int col, char jogador)
 {
+    if (col < 0 || col > 6) 
+    {
+    return -1; // Coluna inválida é tratada como cheia/erro (Formador Rúben)
+    }
     for (int i = 5; i >= 0; i--)
     {
         if (board[i][col] == '.')
@@ -70,4 +74,23 @@ int drop_piece(char board[6][7], int col, char jogador)
         }
     }
     return -1;
+}
+
+int verificar_vitoria(char board[6][7])
+{
+    for (int i = 0; i < 6; i++)  //verificar todas as linhas
+    {
+        for (int j = 0; j < 4; j++)  //apenas as colunas 0 a 3 - pq a partir da coluna 4 já não cabem mais 4 peças na horizontal
+        {
+            if (board[i][j] != '.' &&
+                board[i][j] == board[i][j+1] &&
+                board[i][j] == board[i][j+2] &&
+                board[i][j] == board[i][j+3]
+                )
+            {
+            return board[i][j];
+            }
+        }
+    }
+  return '.';   // ninguém ganhou
 }

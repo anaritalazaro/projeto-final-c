@@ -10,6 +10,8 @@ int main(void)
     int jogadas = 0; // Contador de jogadas
     char jogador_atual = 'X';
 
+    char vencedor;
+
     mostrar_boas_vindas();
 
     show_menu();
@@ -29,14 +31,32 @@ int main(void)
         // Largar a peça (drop_piece) com essa coluna e o jogador_atual , guardando o retorno em 'linha'
         linha = drop_piece(board, col, jogador_atual);
         // Se devolveu -1, avisar que a coluna está cheia e voltar atrás sem gastar a jogada
-                //if (linha == -1)
-                //avisar 
-                //continue
-        //Caso contrário, incrementar jogadas e trocar o jogador
-
-                //jogadas++
+                //Ajuda Formador Rúben
+                if (linha == -1) 
+                {
+                    printf("\nJogada inválida! Coluna cheia ou inexistente. Tenta outra vez.\n");
+                    continue; // Volta ao início do while sem gastar jogada nem trocar de jogador
+                }
+                 // Se a jogada for válida:
                 jogadas++;
-                //if 
+
+                vencedor = verificar_vitoria(board);
+
+                if (vencedor != '.')
+                {
+                
+                printf("\n*** O jogador %c ganhou! ***\n", vencedor);
+                break;
+                }
+
+                // Trocar o jogador para o turno seguinte
+                if (jogador_atual == 'X') 
+                {
+                    jogador_atual = 'O';
+                } else 
+                {
+                    jogador_atual = 'X';
+                }
     }
     print_board(board);
 

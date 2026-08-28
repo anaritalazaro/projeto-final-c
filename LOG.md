@@ -1,5 +1,25 @@
 # Registo de Sessões
 
+## Sessão 3 - 28/08/2026
+
+**Funcionalidades implementadas hoje:**
+- Validação de coluna fora do intervalo 0–6 no drop_piece
+- Tratamento da jogada inválida com continue
+- Alternância entre jogadores
+- Função verificar_vitoria com a deteção horizontal a funcionar
+
+**Maior dificuldade encontrada e como resolvi:**
+- Risco de acesso a memória fora da matriz no drop_piece, identificado pelo formador na revisão do código: uma coluna fora do intervalo 0-6 seria lida na mesma, podendo causar um erro grave. Resolvido com uma validação no início da função, que devolve -1 nesses casos.
+- Distinguir uma função que verifica de uma que mostra — a tendência inicial foi reaproveitar o print_board e encher a função de printf. Resolvido percebendo que cada função tem uma responsabilidade única: o print_board mostra, o verificar_vitoria só devolve um resultado.
+- Perceber os limites dos ciclos (porquê j < 4 na horizontal). Resolvido ao eneteder que a partir da coluna 4 já não cabem quatro peças à direita, daí j < 4.
+
+
+**Próximo passo planeado:**
+- Vitória vertical e nas duas diagonais, deteção de empate, e reinício do jogo.
+
+**Linhas de código escritas hoje (estimativa):**
+40
+
 ## Sessão 2 - 24/08/2026
 
 **Funcionalidades implementadas hoje:**

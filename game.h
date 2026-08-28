@@ -11,4 +11,7 @@ void show_menu(void);
 
 int drop_piece(char board[6][7], int col, char jogador);
 
+int verificar_vitoria(char board[6][7]);
+
+
 #endif //última linha do ficheiro
