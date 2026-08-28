@@ -78,6 +78,7 @@ int drop_piece(char board[6][7], int col, char jogador)
 
 int verificar_vitoria(char board[6][7])
 {
+    //horizontal
     for (int i = 0; i < 6; i++)  //verificar todas as linhas
     {
         for (int j = 0; j < 4; j++)  //apenas as colunas 0 a 3 - pq a partir da coluna 4 já não cabem mais 4 peças na horizontal
@@ -92,5 +93,51 @@ int verificar_vitoria(char board[6][7])
             }
         }
     }
+    //vertical
+    for (int i = 0 ; i < 3; i++)
+    {
+        for (int j = 0; j < 7; j++)
+        {
+            if (board[i][j] != '.' &&
+                board[i][j] == board[i+1][j] &&
+                board[i][j] == board[i+2][j] &&
+                board[i][j] == board[i+3][j]
+                )
+            {
+            return board[i][j];
+            }
+        }
+    }
+    //diagonal descendente
+    for (int i = 0 ; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (board[i][j] != '.' &&
+                board[i][j] == board[i+1][j+1] &&
+                board[i][j] == board[i+2][j+2] &&
+                board[i][j] == board[i+3][j+3]
+                )
+            {
+            return board[i][j];
+            }
+        }
+    }
+    //diagonal ascendente
+    for (int i = 3 ; i < 6; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (board[i][j] != '.' &&
+                board[i][j] == board[i-1][j+1] &&
+                board[i][j] == board[i-2][j+2] &&
+                board[i][j] == board[i-3][j+3]
+                )
+            {
+            return board[i][j];
+            }
+        }
+    }
+
   return '.';   // ninguém ganhou
 }
